@@ -20,8 +20,5 @@ A Rust client server game for the terminal that lets you play the Roulette casin
 
 #### Future Improvements
 
-
-
-### Building and Running
-
-
+* Create Roulette game
+* Provide feedback to client on game state
