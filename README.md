@@ -1,4 +1,4 @@
-## rrgmae: Rustacean Roullete Game
+## rrgame: Rustacean Roullete Game
 
 A Rust client server game for the terminal that lets you play the Roulette casino game with your friends.
 
