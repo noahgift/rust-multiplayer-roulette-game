@@ -40,7 +40,8 @@ fn get_id() -> String {
 }
 
 //client function accepts string message and sends it to server
-#[allow(clippy::unused_io_amount)]pub async fn client(message: String) -> Result<(), Box<dyn std::error::Error>> {
+#[allow(clippy::unused_io_amount)]
+pub async fn client(message: String) -> Result<(), Box<dyn std::error::Error>> {
     let mut stream = TcpStream::connect(SERVER).await?;
     //send the message to the server with unique id
     let message = format!("{}:{}", get_id(), message);

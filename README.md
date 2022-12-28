@@ -1,4 +1,6 @@
 ## rrgame: Rustacean Roullete Game
+[![Rustfmt](https://github.com/noahgift/rust-multiplayer-roulette-game/actions/workflows/rustfmt.yml/badge.svg)](https://github.com/noahgift/rust-multiplayer-roulette-game/actions/workflows/rustfmt.yml)
+
 
 A Rust client server game for the terminal that lets you play the Roulette casino game with your friends.
 
