@@ -4,7 +4,6 @@ with their friends.  The game is played from the command-line and the server.
  */
 use clap::Parser;
 
-
 #[derive(Parser)]
 //add extended help
 #[clap(
@@ -21,28 +20,23 @@ struct Cli {
 #[derive(Parser)]
 enum Commands {
     Client {
-        #[clap(short, long)]
-        host: String,
-        #[clap(short, long)]
-        port: u16,
+        #[clap(short, long, default_value = "Hello World")]
+        message: String,
     },
-    Server {
-        #[clap(short, long)]
-        port: u16,
-    },
+    Server {},
 }
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Cli::parse();
     match args.command {
-        Some(Commands::Client { host, port }) => {
-            println!("Client connecting to {}:{}", host, port);
-            client::run(host, port).await?;
+        Some(Commands::Client { message }) => {
+            println!("Client connecting to server");
+            rrgame::client(message).await?;
         }
-        Some(Commands::Server { port }) => {
-            println!("Server listening on port {}", port);
-            server::run(port).await?;
+        Some(Commands::Server {}) => {
+            println!("Server listening");
+            rrgame::server().await?;
         }
         None => {
             println!("Please specify a subcommand");
